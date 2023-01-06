@@ -56,7 +56,6 @@ local port=luci.sys.exec("awk '/  port:/{printf($2);exit;}' "..configpath.." 2>n
 if (port=="") then port="?" end
 ---- Redirect
 o = s:option(ListValue, "redirect", port..translate("Redirect"), translate("AdGuardHome redirect mode"))
-o.placeholder = "none"
 o:value("none", translate("none"))
 o:value("dnsmasq-upstream", translate("Run as dnsmasq upstream server"))
 o:value("redirect", translate("Redirect 53 port to AdGuardHome"))
